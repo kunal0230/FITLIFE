@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bicep Curl Counter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Add CSS file -->
+    <style>
+        /* Add custom CSS for the video feed */
+        .video-container {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        img#video_feed {
+            max-width: 500px;
+            /*height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <center><h1>Bicep Curl Counter</h1></center>
+
+    <div class="container">
+        <div class="video-container">
+            <img id="video_feed" src="{{ url_for('video_feed') }}" alt="Video Feed">
+        </div>
+    
+        <div class="exercise-controls">
+            <form id="startExerciseForm" method="post" action="/start_exercise">
+                <!-- Your form fields here -->
+                <input type="submit" value="Start Exercise">
+            </form>
+            
+            {% if start_tracking %}
+                <form action="/stop_exercise" method="post">
+                    <button type="submit" class="stop-button">Stop Exercise</button>
+                </form>
+            {% else %}
+                <button onclick="toggleExercise()" class="start-button">Start Exercise</button>
+            {% endif %}
+            <p>Total Reps: Left: {{ left_curl_count }}, Right: {{ right_curl_count }}</p>
+        </div>
+     
+        <div class="instructions">
+            <h2>How to Do Bicep Curls</h2>
+            <p>1. Stand with your feet shoulder-width apart.</p>
+            <p>2. Hold a dumbbell in each hand, arms fully extended, palms facing forward.</p>
+            <p>3. Keep your back straight, engage your core, and relax your shoulders.</p>
+            <p>4. Bend your elbows and lift the dumbbells toward your shoulders.</p>
+            <p>5. Lower the dumbbells back to the starting position.</p>
+            <p>6. Repeat for the desired number of reps.</p>
+        </div>
+    </div>
+
+    <script>
+        let exerciseRunning = false;
+        let repCount = 0;
+
+        function toggleExercise() {
+            if (exerciseRunning) {
+                stopExercise();
+            } else {
+                startExercise();
+            }
+        }
+
+        function startExercise() {
+            // Send a POST request to start the exercise
+            fetch('/start_exercise', {
+                method: 'POST'
+            })
+            .then(response => response.text())
+            .then(data => {
+                exerciseRunning = true;
+                document.getElementById('startExerciseForm').style.display = 'none';
+                document.getElementById('stopButton').style.display = 'block';
+                document.getElementById('repCount').style.display = 'none'; // Hide rep count
+                alert(data); // Show an alert when exercise starts
+            });
+        }
+
+        function stopExercise() {
+            // Send a POST request to stop the exercise
+            fetch('/stop_exercise', {
+                method: 'POST'
+            })
+            .then(response => response.text())
+            .then(data => {
+                exerciseRunning = false;
+                document.getElementById('startExerciseForm').style.display = 'block';
+                document.getElementById('stopButton').style.display = 'none';
+                document.getElementById('repCount').style.display = 'block'; // Show rep count
+                const [leftReps, rightReps] = data.split(" ");
+                document.getElementById('leftRepCount').textContent = leftReps; // Display left rep count
+                document.getElementById('rightRepCount').textContent = rightReps; // Display right rep count
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="static/styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Bicep Curl Counter</h1>
+    </header>
+
+    <div class="container">
+        <p>Get ready to track your bicep curls!</p>
+        <a href="/bicep_curls" class="button">Biceps Curls</a>
+        <a href="/exercise_insights">Exercise Insights</a>
+
+    </div>
+    <div class="banner">
+        <header>
+          <div class="nav">
+            <ul>
+              <li><a href="#" class="active_nav">PUW</a></li>
+              <li><a href="https://twitter.com/chenhuaizhe" target="_blank">Twitter</a></li>
+              <li><a href="mailto: chenhuaizhe@gmail.com" target="_blank">Email</a></li>
+            </ul>
+          </div>
+          <a class="logo" href="#"><img src="images/logo.png" alt="logo"></a>
+        </header>
+        <div class="banner_box">
+          <div class="banner_left">
+            <h1>Push-up Workout</h1>
+            <p>An app that helps you record push-ups more easily. We may not need to do so much exercise, one is enough,
+              as long as we can persist. </p>
+            <a href="https://apps.apple.com/app/id1488091840"
+              class="download_btn"></a>
+            <div class="testflight"> <a href="https://testflight.apple.com/join/myFEz6DW" target="_blank">Join Beta on
+                TestFlight</a></div>
+          </div>
+          <img class="banner_image" src="images/banner.png" alt="">
+        </div>
+      </div>
+      <section>
+        <div class="feature_box">
+          <div class="feature_content feature_content1">
+            <h2>Auto record push-ups</h2>
+            <p>Before you support the ground with both hands, just put the phone under your face or chest, when you are
+              close to the front camera of the phone, or click the circle in the app, it will record you Did a push-up.
+              All your data can be backed up via iCloud.</p>
+            <ul>
+              <li>Sensors recognize push-ups</li>
+              <li class="li2">Tap the app to recognize push-ups</li>
+              <li class="li3">iCloud Sync</li>
+            </ul>
+          </div>
+          <img class="feature_img" src="images/1-auto_record.svg" alt="">
+        </div>
+        <div class="feature_box">
+          <div class="feature_content feature_content2">
+            <h2>Effect monitoring</h2>
+            <p>You can view your various statistics, including total number, total days, consecutive days, etc.
+              You can view all your history records according to the timeline.
+              You can record your weight, body fat rate, and resting heart rate at any time, and compare them to see the
+              effects of your exercise.</p>
+            <ul>
+              <li class="li4">Statistics</li>
+              <li class="li5">History</li>
+              <li class="li6">Body weight, body fat rate, resting heart rate</li>
+            </ul>
+          </div>
+          <img class="feature_img" src="images/2-chart.svg" alt="">
+        </div>
+        <div class="feature_box">
+          <div class="feature_content">
+            <h2>Training plan</h2>
+            <p>You can go through a variety of training modes, including repetition training, time training, calorie
+              training, interval training and free training. You can also remind yourself to start training regularly. You
+              can also use URL Schemes or Siri & Shortcuts to automatically trigger your training.
+            </p>
+            <ul>
+              <li class="li7">Multiple training modes</li>
+              <li class="li8">Reminder</li>
+              <li class="li9">URL Schemes, Siri Shortcuts</li>
+            </ul>
+          </div>
+          <img class="feature_img feature_img3" src="images/3-plan.svg" alt="">
+        </div>
+      </section>
+      <section class="more_features">
+        <h2>More Features</h2>
+        <div class="more_box">
+          <article>
+            <img src="images/m1.svg" alt="">
+            <h4>Beautiful UI & Theme</h4>
+            <p>We try to use Apple's native components to build the UI interface so that the app looks more beautiful and
+              simple. At the same time, we also provide several different color themes for users to choose.</p>
+          </article>
+          <article>
+            <img src="images/m2.svg" alt="">
+            <h4>Share</h4>
+            <p>You can share your records, achievements, and video records during training with your family or friends.
+            </p>
+          </article>
+          <article>
+            <img src="images/m3.svg" alt="">
+            <h4>Apple Health</h4>
+            <p>Your data can be synchronized to Apple Health.</p>
+          </article>
+          <article>
+            <img src="images/m4.svg" alt="">
+            <h4>Game Center</h4>
+            <p>We have access to game center and provide multiple rankings, achievements and medals.</p>
+          </article>
+          <article>
+            <img src="images/m5.svg" alt="">
+            <h4>Voice Broadcast</h4>
+            <p>During training, the voice broadcast can let you know the progress better and cheer you up.</p>
+          </article>
+          <article>
+            <img src="images/m6.svg" alt="">
+            <h4>Teaching and communication</h4>
+            <p>We will exchange and learn the correct method of push-ups together, as well as some problems encountered by
+              everyone in the process.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer_box">
+        <img class="footer_img" src="images/footer_img.png" alt="">
+        <div class="footer_nav">
+          <ul>
+            <li>Contact us: <a href="mailto: chenhuaizhe@gmail.com" target="_blank">chenhuaizhe@gmail.com</a></li>
+            <li>Follow us on Twitter: <a href="https://twitter.com/chenhuaizhe" target="_blank">@chenhuaizhe</a></li>
+          </ul>
+          <p>The website is made with reference to <a href="https://taio.app">taio.app</a></p>
+        </div>
+      </div>
+  
+      <div class="container">
+        <div class="video-container">
+            <img id="video_feed" src="{{ url_for('video_feed') }}" alt="Video Feed" style="max-width: 100%;">
+        </div>
+    </footer>
+  
+</body>
+</html>
