@@ -14,6 +14,29 @@ Due to **SIH 2023 copyright policies**, the actual backend code files cannot be 
 
 ---
 
+## FITLIFE Presentation
+
+Here is a quick look at the slides showcasing the FITLIFE project:
+
+### Slide 1
+![Slide 1](PPT/FITLIFE_Final_ppt___page-0001.jpg)
+
+### Slide 2
+![Slide 2](PPT/FITLIFE_Final_ppt___page-0002.jpg)
+
+### Slide 3
+![Slide 3](PPT/FITLIFE_Final_ppt___page-0003.jpg)
+
+### Slide 4
+![Slide 4](PPT/FITLIFE_Final_ppt___page-0004.jpg)
+
+### Slide 5
+![Slide 5](PPT/FITLIFE_Final_ppt___page-0005.jpg)
+
+### Slide 6
+![Slide 6](PPT/FITLIFE_Final_ppt___page-0006.jpg)
+
+
 ## How FITLIFE Works
 
 ### 1. User Interaction
