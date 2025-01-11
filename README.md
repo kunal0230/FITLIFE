@@ -7,6 +7,8 @@
 **FITLIFE** is a revolutionary fitness and wellness management system developed during the Smart India Hackathon (SIH) 2023. The platform is designed to assist users in tracking their fitness journey, setting personalized goals, and maintaining a healthy lifestyle through smart recommendations and advanced analytics. The project combines modern technologies like machine learning and IoT integration to provide users with a seamless fitness experience.
 
 ---
+## project demo 
+https://www.youtube.com/watch?v=M9ZTeqHJ7fY
 
 ## About the Code
 
